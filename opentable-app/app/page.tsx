@@ -1,18 +1,23 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import React, { useState } from "react";
+import Link from "next/link";
+import { Navbar, Cards, Header } from "./components";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <h1 className='text-red-500'>Heading</h1>
-        </div>
-      </div>
+    <main className='bg-gray-100 min-h-screen w-screen'>
+      <main className='max-w-screen-2xl m-auto bg-white'>
+        <Navbar />
+        <main>
+          <Header />
+          {/* CARDS */}
+          <div className='py-3 px-36 mt-10 flex flex-wrap justify-center'>
+            {/* CARD */}
+            <Cards />
+            {/* CARD */}
+          </div>
+          {/* CARDS */}
+        </main>
+      </main>
     </main>
   );
 }
