@@ -16,6 +16,7 @@ export default function Header() {
             <p className='mr-6'>Tues, 22, 2023</p>
             <p className='mr-6'>7:30 PM</p>
             <p className='mr-6'>3 people</p>
+            <p className='mr-6'>4 people</p>
           </div>
         </div>
       </div>
