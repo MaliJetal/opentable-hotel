@@ -1,17 +1,41 @@
 import React, { useState } from "react";
 import { Cards, Header } from "./components";
+import RestaurantCard, {
+  RestaurantCardProps,
+} from "./search/components/RestaurantCard";
+import { PrismaClient } from "@prisma/client";
 
-export default function Home() {
+const prisma = new PrismaClient();
+const fetchRestaurants = async (): Promise<[RestaurantCardProps]> => {
+  const restaurants = await prisma.restaurant.findMany({
+    select: {
+      id: true,
+      main_image: true,
+      name: true,
+      cuisine: true,
+      price: true,
+      location: true,
+    },
+  });
+
+  if (!restaurants) {
+    throw new Error();
+  }
+
+  return restaurants;
+};
+
+export default async function Home() {
+  const restaurants = await fetchRestaurants();
+  console.log("REstaurant : ", restaurants);
   return (
     <main>
       <Header />
-      {/* CARDS */}
       <div className='py-3 px-36 mt-10 flex flex-wrap justify-center'>
-        {/* CARD */}
-        <Cards />
-        {/* CARD */}
+        {restaurants.map((restaurant) => (
+          <RestaurantCard restaurant={restaurant} />
+        ))}
       </div>
-      {/* CARDS */}
     </main>
   );
 }

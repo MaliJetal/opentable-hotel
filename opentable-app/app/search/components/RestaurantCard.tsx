@@ -1,6 +1,20 @@
+import { PRICE } from "@prisma/client";
 import Link from "next/link";
 
-export default function RestaurantCar() {
+export interface RestaurantCardProps {
+  id: number;
+  price: PRICE;
+  name: string;
+  location: string;
+  cuisine: CusineProps;
+  main_image: string;
+}
+
+interface CusineProps {
+  name: string;
+}
+
+export default function RestaurantCard({}: RestaurantCardProps) {
   return (
     <div className='border-b flex pb-5'>
       <img
