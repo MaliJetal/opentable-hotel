@@ -1,7 +1,7 @@
-import { useParams } from "next/navigation";
 import Header from "./components/Header";
 export default function RestaurantLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
   params: { slug: string };

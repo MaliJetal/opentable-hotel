@@ -1,12 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
+import { PRICE, Location, Cuisine } from "@prisma/client";
 import { Cards, Header } from "./components";
-import RestaurantCard, {
-  RestaurantCardProps,
-} from "./search/components/RestaurantCard";
+import RestaurantCard from "./search/components/RestaurantCard";
 import { PrismaClient } from "@prisma/client";
 
+export interface RestaurantCardProps {
+  id: number;
+  price: PRICE;
+  name: string;
+  location: Location;
+  cuisine: Cuisine;
+  main_image: string;
+}
+
 const prisma = new PrismaClient();
-const fetchRestaurants = async (): Promise<[RestaurantCardProps]> => {
+const fetchRestaurants = async (): Promise<RestaurantCardProps[]> => {
   const restaurants = await prisma.restaurant.findMany({
     select: {
       id: true,
@@ -17,10 +25,6 @@ const fetchRestaurants = async (): Promise<[RestaurantCardProps]> => {
       location: true,
     },
   });
-
-  if (!restaurants) {
-    throw new Error();
-  }
 
   return restaurants;
 };
