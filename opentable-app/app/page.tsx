@@ -1,7 +1,6 @@
 import React from "react";
 import { PRICE, Location, Cuisine } from "@prisma/client";
 import { Cards, Header } from "./components";
-import RestaurantCard from "./search/components/RestaurantCard";
 import { PrismaClient } from "@prisma/client";
 
 export interface RestaurantCardProps {
