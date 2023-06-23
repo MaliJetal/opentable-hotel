@@ -31,13 +31,12 @@ const fetchRestaurants = async (): Promise<RestaurantCardProps[]> => {
 
 export default async function Home() {
   const restaurants = await fetchRestaurants();
-  console.log("REstaurant : ", restaurants);
   return (
     <main>
       <Header />
       <div className='py-3 px-36 mt-10 flex flex-wrap justify-center'>
         {restaurants.map((restaurant) => (
-          <RestaurantCard restaurant={restaurant} />
+          <Cards restaurant={restaurant} />
         ))}
       </div>
     </main>

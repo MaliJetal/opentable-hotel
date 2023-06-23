@@ -8,6 +8,10 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts",
+    "schema": "./prisma/schema.prisma"
+  },
   "dependencies": {
     "@next/font": "13.4.4",
     "@prisma/client": "^4.15.0",

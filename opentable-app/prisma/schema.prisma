@@ -6,8 +6,9 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model Restaurant {
@@ -25,8 +26,8 @@ model Restaurant {
   location    Location @relation(fields: [location_id], references: [id])
   cuisine_id  Int
   cuisine     Cuisine  @relation(fields: [cuisine_id], references: [id])
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
 }
 
 model Item {
@@ -36,25 +37,24 @@ model Item {
   description   String
   restaurant_id Int
   restaurant    Restaurant @relation(fields: [restaurant_id], references: [id])
-  createdAt     DateTime   @default(now())
-  updatedAt     DateTime   @updatedAt
-  restaurantId  Int
+  created_at    DateTime   @default(now())
+  updated_at    DateTime   @updatedAt
 }
 
 model Location {
   id          Int          @id @default(autoincrement())
   name        String
-  createdAt   DateTime     @default(now())
-  updatedAt   DateTime     @updatedAt
   restaurants Restaurant[]
+  created_at  DateTime     @default(now())
+  updated_at  DateTime     @updatedAt
 }
 
 model Cuisine {
   id          Int          @id @default(autoincrement())
   name        String
-  createdAt   DateTime     @default(now())
-  updatedAt   DateTime     @updatedAt
   restaurants Restaurant[]
+  created_at  DateTime     @default(now())
+  updated_at  DateTime     @updatedAt
 }
 
 enum PRICE {

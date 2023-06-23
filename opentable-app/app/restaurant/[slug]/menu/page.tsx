@@ -5,7 +5,7 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 const fetchItems = async (slug: any) => {
-  const restauarnt = await prisma.restaurant.findUnique({
+  const restauarnt = await prisma.restaurant.findFirst({
     where: {
       slug,
     },

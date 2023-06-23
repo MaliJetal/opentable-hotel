@@ -1,4 +1,5 @@
-import { RestaurantCardProps } from "../search/components/RestaurantCard";
+import React from "react";
+import { RestaurantCardProps } from "../page";
 import Price from "./Price";
 
 interface Props {
@@ -19,9 +20,9 @@ export default function Cards({ restaurant }: Props) {
           <p className='ml-2'>77 reviews</p>
         </div>
         <div className='flex text-reg font-light capitalize'>
-          <p className=' mr-3'>M{restaurant.cuisine.name}</p>
+          <p className=' mr-3'>{restaurant.cuisine.name}</p>
           <Price price={restaurant.price} />
-          <p>{restaurant.location}</p>
+          <p>{restaurant.price}</p>
         </div>
         <p className='text-sm mt-1 font-bold'>Booked 3 times today</p>
       </div>
