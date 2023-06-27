@@ -1,4 +1,4 @@
-import { PRICE } from "@prisma/client";
+import Price from "../../components/Price";
 import Link from "next/link";
 import { RestaurantCardProps } from "../../page";
 
@@ -8,12 +8,8 @@ export default function RestaurantCard({
   restaurant: RestaurantCardProps;
 }) {
   return (
-    <div className='border-b flex pb-5'>
-      <img
-        src='https://images.otstatic.com/prod1/49153814/2/medium.jpg'
-        alt=''
-        className='w-44 rounded'
-      />
+    <div className='border-b flex pb-5 ml-4'>
+      <img src={restaurant.main_image} alt='' className='w-44 h-36 rounded' />
       <div className='pl-5'>
         <h2 className='text-3xl'>{restaurant.name}</h2>
         <div className='flex items-start'>
@@ -22,19 +18,15 @@ export default function RestaurantCard({
         </div>
         <div className='mb-9'>
           <div className='font-light flex text-reg'>
-            <p className='mr-4'>
-              {restaurant.price === PRICE.EXPENSIVE
-                ? "$$$$"
-                : restaurant.price === PRICE.REGULAR
-                ? "$$$"
-                : "$$"}
-            </p>
-            <p className='mr-4'>{restaurant.cuisine + ""}</p>
-            <p className='mr-4'>{restaurant.location + ""}</p>
+            <Price price={restaurant.price} />
+            <p className='mr-4 capitalize'>{restaurant.cuisine.name}</p>
+            <p className='mr-4 capitalize'>{restaurant.location.name}</p>
           </div>
         </div>
         <div className='text-red-600'>
-          <Link href='restaurant/milestones-stone'>View more information</Link>
+          <Link href={`restaurant/{restaurant.slug`}>
+            View more information
+          </Link>
         </div>
       </div>
     </div>
