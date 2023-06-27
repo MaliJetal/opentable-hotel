@@ -12,12 +12,12 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   //   await prisma.table.deleteMany();
-  // await prisma.review.deleteMany();
+  await prisma.review.deleteMany();
   await prisma.item.deleteMany();
   await prisma.restaurant.deleteMany();
   await prisma.location.deleteMany();
   await prisma.cuisine.deleteMany();
-  // await prisma.user.deleteMany();
+  await prisma.user.deleteMany();
 
   await prisma.location.createMany({
     data: [{ name: "ottawa" }, { name: "toronto" }, { name: "niagara" }],
@@ -573,14 +573,12 @@ export default async function handler(
           "Crispy chicken wings coated in a sauce made from roasted whole spices and clarified butter.",
         price: "$18.00",
         restaurant_id: vivaanId,
-        restaurantId: vivaanId,
       },
       {
         name: "Sol Kadhi scallop ceviche",
         description: "Cured scallop served with mangosteen and coconut broth",
         price: "$18.00",
         restaurant_id: vivaanId,
-        restaurantId: vivaanId,
       },
       {
         name: "Butte ka kees",
@@ -588,7 +586,6 @@ export default async function handler(
           "Bhutte( Corn) Khees( grated) and spiced and tempered served with waffers",
         price: "$17.00",
         restaurant_id: vivaanId,
-        restaurantId: vivaanId,
       },
       {
         name: "Burrata Paapdi Chaat",
@@ -596,7 +593,6 @@ export default async function handler(
           "Our house made paapdi served with spiced potatoes and burrata cheese dressed with in house chutneys",
         price: "$16.00",
         restaurant_id: vivaanId,
-        restaurantId: vivaanId,
       },
       {
         name: "Shaadi Waala Chicken Curry",
@@ -604,7 +600,6 @@ export default async function handler(
           "Chicken curry usually served in weddings back home (Must Try)",
         price: "$26.00",
         restaurant_id: vivaanId,
-        restaurantId: vivaanId,
       },
       {
         name: "Shahi Tukda",
@@ -612,7 +607,6 @@ export default async function handler(
           "Chef’s signature dessert : crispy bread poched with flavoured milk and topped with homemade cream made of pistachios, rose.",
         price: "$11.00",
         restaurant_id: vivaanId,
-        restaurantId: vivaanId,
       },
       {
         name: "Four-In-One Chicken",
@@ -620,7 +614,6 @@ export default async function handler(
           "Boneless chicken breast pieces marinated with four different kind of texture and Indian spices for each piece and grilled in clay oven",
         price: "$16.99",
         restaurant_id: RamaKrishnaId,
-        restaurantId: RamaKrishnaId,
       },
       {
         name: "Chicken Tikka",
@@ -628,7 +621,6 @@ export default async function handler(
           "Boneless Chicken marinated overnight with yogurt, Indian spices and cooked in a Tandoor oven",
         price: "$16.99",
         restaurant_id: RamaKrishnaId,
-        restaurantId: RamaKrishnaId,
       },
       {
         name: "Paneer Tikka",
@@ -636,7 +628,6 @@ export default async function handler(
           "Tandoori Paneer Tikka is made from homemade cottage cheese which is marinated in yogurt and dry aromatic Indian spices along with diced onions and capsicum and grilled in clay oven",
         price: "$16.99",
         restaurant_id: RamaKrishnaId,
-        restaurantId: RamaKrishnaId,
       },
       {
         name: "Fish Tikka",
@@ -644,7 +635,6 @@ export default async function handler(
           "Deboned fish marinated in ginger, garlic and other spices and grilled in clay oven",
         price: "$16.99",
         restaurant_id: RamaKrishnaId,
-        restaurantId: RamaKrishnaId,
       },
       {
         name: "Prawn Tandoori",
@@ -652,7 +642,6 @@ export default async function handler(
           "Large juicy prawn marinated in ginger, garlic, fresh squeezed lemon juice and along with various dry spices and grilled in clay oven",
         price: "$19.49",
         restaurant_id: RamaKrishnaId,
-        restaurantId: RamaKrishnaId,
       },
       {
         name: "Mixed Grill",
@@ -660,7 +649,6 @@ export default async function handler(
           "Tandoori chicken, lamb tikka, chicken tikka and fish grilled in our clay oven",
         price: "$20.99",
         restaurant_id: RamaKrishnaId,
-        restaurantId: RamaKrishnaId,
       },
       {
         name: "Coconut Curry",
@@ -668,7 +656,6 @@ export default async function handler(
           "Choice of boneless chicken breast, lamb, beef, fish or shrimp cooked in a creamy coconut, butter and onion sauce",
         price: "15.99",
         restaurant_id: RamaKrishnaId,
-        restaurantId: RamaKrishnaId,
       },
       {
         name: "Quilon Chicken",
@@ -676,28 +663,24 @@ export default async function handler(
           "free range grass fed chicken cooked in a tangy tomato masala",
         price: "$25.00",
         restaurant_id: coconutLagoonId,
-        restaurantId: coconutLagoonId,
       },
       {
         name: "Mariposa's Duck Biryani**",
         description: "slow baked in kiama rice, quail egg and raita",
         price: "$26.00",
         restaurant_id: coconutLagoonId,
-        restaurantId: coconutLagoonId,
       },
       {
         name: "Pala Lamb Peralan",
         description: "tender morsels of lamb in an exotic masala",
         price: "$26.00",
         restaurant_id: coconutLagoonId,
-        restaurantId: coconutLagoonId,
       },
       {
         name: "Roasted Salmon In Moilee Sauce",
         description: "marinated in green mango, spices and roasted",
         price: "$27.00",
         restaurant_id: coconutLagoonId,
-        restaurantId: coconutLagoonId,
       },
       {
         name: "Vegetable Aviyal",
@@ -705,7 +688,6 @@ export default async function handler(
           "assorted vegetables cooked in yoghurt, coconut spiked with cumin",
         price: "$22.00",
         restaurant_id: coconutLagoonId,
-        restaurantId: coconutLagoonId,
       },
       {
         name: "Aloo Tiki",
@@ -713,7 +695,6 @@ export default async function handler(
           "Potato croquette topped with pickled seasonal vegetables and an assortment of chutneys",
         price: "$12.00",
         restaurant_id: lastTrainToDelhiId,
-        restaurantId: lastTrainToDelhiId,
       },
       {
         name: "Spicy Lamb Chops",
@@ -721,7 +702,6 @@ export default async function handler(
           "Lamb chops are coated in a spicy marinade and seared. It's paired with mint chutney, mango chutney, and raita. Allergens: Meat",
         price: "16.00",
         restaurant_id: lastTrainToDelhiId,
-        restaurantId: lastTrainToDelhiId,
       },
       {
         name: "Crispy Shrimp",
@@ -729,14 +709,12 @@ export default async function handler(
           "Tandoori shrimp wrapped in crispy potato accompanied by a seasonal chutney and micro greens from the garden",
         price: "$15.00",
         restaurant_id: lastTrainToDelhiId,
-        restaurantId: lastTrainToDelhiId,
       },
       {
         name: "Bhaingan Bharta",
         description: "Smokey eggplant and peas",
         price: "$17.00",
         restaurant_id: lastTrainToDelhiId,
-        restaurantId: lastTrainToDelhiId,
       },
       {
         name: "Kofta Curry",
@@ -744,21 +722,18 @@ export default async function handler(
           "Indian kofta served with bottleneck gourds and potatoes in a cashew coconut sauce",
         price: "$20.00",
         restaurant_id: lastTrainToDelhiId,
-        restaurantId: lastTrainToDelhiId,
       },
       {
         name: "murgh salaad",
         description: "Chicken breast, mix greens, mint vinegar dressing",
         price: "$18.00",
         restaurant_id: adrakYorkvilleId,
-        restaurantId: adrakYorkvilleId,
       },
       {
         name: "papad ki tokri",
         description: "Papadams, assorted chutneys & salsa",
         price: "$18.00",
         restaurant_id: adrakYorkvilleId,
-        restaurantId: adrakYorkvilleId,
       },
       {
         name: "khumb korma",
@@ -766,14 +741,12 @@ export default async function handler(
           "Aged basmati rice, marinated lamb & puff pastry cover, garlic yogurt",
         price: "$36.00",
         restaurant_id: adrakYorkvilleId,
-        restaurantId: adrakYorkvilleId,
       },
       {
         name: "dal tadka",
         description: "Yellow lentils, indian tempering",
         price: "$20.00",
         restaurant_id: adrakYorkvilleId,
-        restaurantId: adrakYorkvilleId,
       },
       {
         name: "cocochoco rasmalai cheese cake",
@@ -781,7 +754,6 @@ export default async function handler(
           "Coconut crémeux, chocolate hazelnut crunch, coconut snow, citrus gel, cardamom ice cream",
         price: "$19.00",
         restaurant_id: adrakYorkvilleId,
-        restaurantId: adrakYorkvilleId,
       },
       {
         name: "Molasses Braised Beef Cheeks Curry",
@@ -789,14 +761,12 @@ export default async function handler(
           "Caramelised root vegetables, deggi mirch, buttermilk onion rings",
         price: "$32.00",
         restaurant_id: curryishTavernId,
-        restaurantId: curryishTavernId,
       },
       {
         name: "Coconut Vatan Stuffed Whole Branzino",
         description: "Turmeric lemon butter sauce, curry leaves, mustard seeds",
         price: "$39.00",
         restaurant_id: curryishTavernId,
-        restaurantId: curryishTavernId,
       },
       {
         name: "Goan Chorizo + Braised Pork Shoulder Curry",
@@ -804,28 +774,24 @@ export default async function handler(
           "Double smoked bacon, roasted parsnips, red kidney beans, apple achar",
         price: "$31.00",
         restaurant_id: curryishTavernId,
-        restaurantId: curryishTavernId,
       },
       {
         name: "Screech Rum Soaked Gulab Jamun",
         description: "Whipped mascarpone cream, pistachio crumble",
         price: "$14.00",
         restaurant_id: curryishTavernId,
-        restaurantId: curryishTavernId,
       },
       {
         name: "Ontario Apple + Almond Halwa Tart",
         description: "Whipped cinnamon malai, red currants",
         price: "$14.00",
         restaurant_id: curryishTavernId,
-        restaurantId: curryishTavernId,
       },
       {
         name: "Vegetable samosa",
         description: "Seasoned potatoes and peas wrapped in a light pastry",
         price: "$4.00",
         restaurant_id: utsavId,
-        restaurantId: utsavId,
       },
       {
         name: "Goan fish curry",
@@ -833,7 +799,6 @@ export default async function handler(
           "Filet of salmon cooked in a traditional hot and tangy coconut curry",
         price: "$15.00",
         restaurant_id: utsavId,
-        restaurantId: utsavId,
       },
       {
         name: "Lamb vindaloo",
@@ -841,7 +806,6 @@ export default async function handler(
           "A delicacy from Goa - Boneless lamb cooked in a hot, spicy and tangy sauce with potatoes",
         price: "$14.00",
         restaurant_id: utsavId,
-        restaurantId: utsavId,
       },
       {
         name: "Matar paneer",
@@ -849,7 +813,6 @@ export default async function handler(
           "Cottage cheese and green peas cooked in butter flavored onion and tomato gravy",
         price: "$10.00",
         restaurant_id: utsavId,
-        restaurantId: utsavId,
       },
       {
         name: "Chicken vindaloo",
@@ -857,7 +820,6 @@ export default async function handler(
           "Chicken cooked with herbs and spices in special hot spicy and tangy sauce with potatoes",
         price: "$14.00",
         restaurant_id: utsavId,
-        restaurantId: utsavId,
       },
       {
         name: "Chicken jalfrezi",
@@ -865,21 +827,18 @@ export default async function handler(
           "Chicken cooked with delicious mix of green peppers, onions, green chillies and tomatoes",
         price: "$14.00",
         restaurant_id: utsavId,
-        restaurantId: utsavId,
       },
       {
         name: "Lamb Lollipops",
         description: "grilled chops with turmeric, mint and fenugreek curry",
         price: "$44.00",
         restaurant_id: pukkaId,
-        restaurantId: pukkaId,
       },
       {
         name: "Vegan Tikka Masala",
         description: "tofu, sweet peppers, red onion, tomato and cashew cream",
         price: "$23.00",
         restaurant_id: pukkaId,
-        restaurantId: pukkaId,
       },
       {
         name: "Short Ribs",
@@ -887,14 +846,12 @@ export default async function handler(
           "PEI beef braised with black cumin, cloves, cardamom and fennel seeds",
         price: "$32.00",
         restaurant_id: pukkaId,
-        restaurantId: pukkaId,
       },
       {
         name: "Punjabi Chicken Curry",
         description: "spicy home-style chicken curry",
         price: "$24.00",
         restaurant_id: pukkaId,
-        restaurantId: pukkaId,
       },
       {
         name: "Pukka Chaat",
@@ -902,7 +859,6 @@ export default async function handler(
           "string vegetables, sprouts, rice crisps, pomegranate, mango, green apple, chutneys and yoghurt",
         price: "$16.00",
         restaurant_id: pukkaId,
-        restaurantId: pukkaId,
       },
       {
         name: "Chicken Tikka",
@@ -910,7 +866,6 @@ export default async function handler(
           "herb-infused white meat, tandoor roasted and served with tamarind chutney",
         price: "$21.00",
         restaurant_id: pukkaId,
-        restaurantId: pukkaId,
       },
       {
         name: "Butter Chicken Poutine",
@@ -918,7 +873,6 @@ export default async function handler(
           "Fries are served topped with melting cheese and butter chicken gravy",
         price: "$8.99",
         restaurant_id: kamasutraIndianId,
-        restaurantId: kamasutraIndianId,
       },
       {
         name: "Vegetable Appy Platter",
@@ -926,21 +880,18 @@ export default async function handler(
           "2 Vegetable samosas, vegetable pakora, paneer pakora, 1 papadum, served with chickpea curry",
         price: "$13.99",
         restaurant_id: kamasutraIndianId,
-        restaurantId: kamasutraIndianId,
       },
       {
         name: "Pulled Chicken",
         description: "marinated chicken with salsa",
         price: "12.00",
         restaurant_id: eldoradoTacoId,
-        restaurantId: eldoradoTacoId,
       },
       {
         name: "Fettuccine Pescatore",
         description: "Scallops, mussels, shrimp and crab meat in a rose sauce",
         price: "$33.00",
         restaurant_id: laBartolaId,
-        restaurantId: laBartolaId,
       },
       {
         name: "Colosseo Pizze",
@@ -948,7 +899,6 @@ export default async function handler(
           "Luciano's spicy Italian sausage, black olives, hot peppers, mozzarella and parmigiano cheeses",
         price: "$22.00",
         restaurant_id: laBartolaId,
-        restaurantId: laBartolaId,
       },
       {
         name: "Vitello alla Griglia",
@@ -956,7 +906,6 @@ export default async function handler(
           "Grilled veal medallion, with seasonal vegetables and potatoes",
         price: "$35.00",
         restaurant_id: laBartolaId,
-        restaurantId: laBartolaId,
       },
       {
         name: "Agnello",
@@ -964,7 +913,6 @@ export default async function handler(
           "Grilled lamb chops in a citrus marinade, with seasonal vegetables and potatoes",
         price: "$35.00",
         restaurant_id: laBartolaId,
-        restaurantId: laBartolaId,
       },
       {
         name: "Orata ai Porri",
@@ -972,7 +920,6 @@ export default async function handler(
         price:
           "Pan seared sea bream filet with sautéed leeks, served over a wild rice medley and greens",
         restaurant_id: laBartolaId,
-        restaurantId: laBartolaId,
       },
       {
         name: "Insalata di Mare",
@@ -980,7 +927,6 @@ export default async function handler(
           "Mixed greens tossed in our house viniagriette, topped with grilled shrimp and crab meat",
         price: "$25.00",
         restaurant_id: laBartolaId,
-        restaurantId: laBartolaId,
       },
       {
         name: "PASTOR",
@@ -988,7 +934,6 @@ export default async function handler(
           "Marinated shaved pork, pineapple, red onion dice, cilantro, salsa verde, corn tortilla",
         price: "$23.00",
         restaurant_id: elCatrinId,
-        restaurantId: laBartolaId,
       },
       {
         name: "COCHINITA PIBIL",
@@ -996,14 +941,12 @@ export default async function handler(
           "Achiote rubbed pork, black bean puree, pickled red onion, cilantro, habanero salsa",
         price: "$23.00",
         restaurant_id: elCatrinId,
-        restaurantId: laBartolaId,
       },
       {
         name: "Seafood Molcajete",
         description: "Grilled calamari, morita garlic shrimp, octopus",
         price: "$23.00",
         restaurant_id: mariachisId,
-        restaurantId: laBartolaId,
       },
       {
         name: "Sirloin Steak & Tuetano Osso Buco",
@@ -1011,7 +954,6 @@ export default async function handler(
           "Bone marrow, slow cooked in the oven, topped with our seasoning",
         price: "$26.00",
         restaurant_id: mariachisId,
-        restaurantId: laBartolaId,
       },
       {
         name: "Fajitas",
@@ -1019,7 +961,6 @@ export default async function handler(
           "A sizzling bed of onions and bell peppers topped with your choice of protein",
         price: "$17.50",
         restaurant_id: mariachisId,
-        restaurantId: mariachisId,
       },
       {
         name: "Hamachi",
@@ -1027,7 +968,6 @@ export default async function handler(
           "Ponzu à la truffe, truffe noire râpée [Salmon Tataki, Truffle ponzu, Shaved black truffle]",
         price: "$24.00",
         restaurant_id: canoRestaurantId,
-        restaurantId: canoRestaurantId,
       },
       {
         name: "Tartare de Thon",
@@ -1035,7 +975,6 @@ export default async function handler(
           "Soja Yuzu, piment serrano [Hot Hamachi, Yuzu soy, Serrano pepper]",
         price: "$24.00",
         restaurant_id: canoRestaurantId,
-        restaurantId: canoRestaurantId,
       },
       {
         name: "Tataki de Saumon",
@@ -1043,7 +982,6 @@ export default async function handler(
           "Purée d'avocat, chili soja [Tuna Tartar, Avocado puree, Chili soy]",
         price: "$27.00",
         restaurant_id: canoRestaurantId,
-        restaurantId: canoRestaurantId,
       },
       {
         name: "Tomato Braised Beef Cheek Ragu",
@@ -1051,7 +989,6 @@ export default async function handler(
           "Wild Mushrooms, Sweet Potato & Ricotta Gnocchi, Fresh Basil",
         price: "$29.00",
         restaurant_id: bluRistoranteId,
-        restaurantId: bluRistoranteId,
       },
       {
         name: "Roasted Butternut Squash Ravioli",
@@ -1059,7 +996,6 @@ export default async function handler(
           "Gorgonzola, Balsamic Reduction, Brown Butter, Crispy Sage",
         price: "$33.00",
         restaurant_id: bluRistoranteId,
-        restaurantId: bluRistoranteId,
       },
       {
         name: "Pan Seared Atlantic Salmon",
@@ -1067,7 +1003,6 @@ export default async function handler(
           "Heirloom Carrots, Green Beans, Parsnip Puree, Beluga Lentils & Barley, Chive Oil",
         price: "$33.00",
         restaurant_id: bluRistoranteId,
-        restaurantId: bluRistoranteId,
       },
       {
         name: "Woodfire Grilled 12oz AAA Ribeye",
@@ -1075,7 +1010,6 @@ export default async function handler(
           "Heirloom Carrots, Green Beans, Sweet Potato Gratin, Mushroom Veal jus",
         price: "$55.00",
         restaurant_id: bluRistoranteId,
-        restaurantId: bluRistoranteId,
       },
       {
         name: "Pizzoccheri di Teglio",
@@ -1083,21 +1017,18 @@ export default async function handler(
           "Homemade short buckwheat Pasta coated in three-cheese sauce, savoy cabbage, potatoes, butter and sage",
         price: "$24.00",
         restaurant_id: stelvioId,
-        restaurantId: stelvioId,
       },
       {
         name: "Gnocchi al Gorgonzola",
         description: "Fresh homemade Gnocchi served in a blue cheese sauce",
         price: "$23.00",
         restaurant_id: stelvioId,
-        restaurantId: stelvioId,
       },
       {
         name: "Risotto ai Funghi",
         description: "Aironi Carnaroli risotto served with mushrooms",
         price: "$26.00",
         restaurant_id: stelvioId,
-        restaurantId: stelvioId,
       },
       {
         name: "Spezzatino con Polenta",
@@ -1105,292 +1036,291 @@ export default async function handler(
           "Traditional Northern Italian Specialty. Slow-cooked feef stew, cooked in tomato sauce and red wine reduction, served over soft polenta",
         price: "$26.00",
         restaurant_id: stelvioId,
-        restaurantId: stelvioId,
       },
     ],
   });
 
-  //   const userLaith = await prisma.user.create({
-  //     data: {
-  //       first_name: "Laith",
-  //       last_name: "Harb",
-  //       email: "laith@hotmail.com",
-  //       city: "ottawa",
-  //       password: "$2b$10$I8xkU2nQ8EAHuVOdbMy9YO/.rSU3584Y.H4LrpIujGNDtmny9FnLu",
-  //       phone: "1112223333",
-  //     },
-  //   });
+  const userLaith = await prisma.user.create({
+    data: {
+      first_name: "Laith",
+      last_name: "Harb",
+      email: "laith@hotmail.com",
+      city: "ottawa",
+      password: "$2b$10$I8xkU2nQ8EAHuVOdbMy9YO/.rSU3584Y.H4LrpIujGNDtmny9FnLu",
+      phone: "1112223333",
+    },
+  });
 
-  //   const userJosh = await prisma.user.create({
-  //     data: {
-  //       first_name: "Josh",
-  //       last_name: "Allen",
-  //       email: "josh@hotmail.com",
-  //       city: "toronto",
-  //       password: "$2b$10$I8xkU2nQ8EAHuVOdbMy9YO/.rSU3584Y.H4LrpIujGNDtmny9FnLu",
-  //       phone: "1112223333",
-  //     },
-  //   });
+  const userJosh = await prisma.user.create({
+    data: {
+      first_name: "Josh",
+      last_name: "Allen",
+      email: "josh@hotmail.com",
+      city: "toronto",
+      password: "$2b$10$I8xkU2nQ8EAHuVOdbMy9YO/.rSU3584Y.H4LrpIujGNDtmny9FnLu",
+      phone: "1112223333",
+    },
+  });
 
-  //   const userLebron = await prisma.user.create({
-  //     data: {
-  //       first_name: "LeBron",
-  //       last_name: "James",
-  //       email: "lebron@hotmail.com",
-  //       city: "niagara",
-  //       password: "$2b$10$I8xkU2nQ8EAHuVOdbMy9YO/.rSU3584Y.H4LrpIujGNDtmny9FnLu",
-  //       phone: "1112223333",
-  //     },
-  //   });
+  const userLebron = await prisma.user.create({
+    data: {
+      first_name: "LeBron",
+      last_name: "James",
+      email: "lebron@hotmail.com",
+      city: "niagara",
+      password: "$2b$10$I8xkU2nQ8EAHuVOdbMy9YO/.rSU3584Y.H4LrpIujGNDtmny9FnLu",
+      phone: "1112223333",
+    },
+  });
 
-  //   const userCassidy = await prisma.user.create({
-  //     data: {
-  //       first_name: "Cassidy",
-  //       last_name: "Marksom",
-  //       email: "cassidy@hotmail.com",
-  //       city: "toronto",
-  //       password: "$2b$10$I8xkU2nQ8EAHuVOdbMy9YO/.rSU3584Y.H4LrpIujGNDtmny9FnLu",
-  //       phone: "1112223333",
-  //     },
-  //   });
+  const userCassidy = await prisma.user.create({
+    data: {
+      first_name: "Cassidy",
+      last_name: "Marksom",
+      email: "cassidy@hotmail.com",
+      city: "toronto",
+      password: "$2b$10$I8xkU2nQ8EAHuVOdbMy9YO/.rSU3584Y.H4LrpIujGNDtmny9FnLu",
+      phone: "1112223333",
+    },
+  });
 
-  //   await prisma.review.createMany({
-  //     data: [
-  //       {
-  //         first_name: "Laith",
-  //         last_name: "Harb",
-  //         text: "This place is amazing, it has some of the best dishes in the world. It is so so so good!!!",
-  //         rating: 5,
-  //         restaurant_id: vivaanId,
-  //         user_id: userLaith.id,
-  //       },
-  //       {
-  //         first_name: "Laith",
-  //         last_name: "Harb",
-  //         text: "This food is so good! It is the fanciest thing I have ever seen in my short life",
-  //         rating: 5,
-  //         restaurant_id: bluRistoranteId,
-  //         user_id: userLaith.id,
-  //       },
-  //       {
-  //         first_name: "Laith",
-  //         last_name: "Harb",
-  //         text: "Excellent food and service. Busy night, but everything was great! Highly recommend.",
-  //         rating: 5,
-  //         restaurant_id: elCatrinId,
-  //         user_id: userLaith.id,
-  //       },
-  //       {
-  //         first_name: "Laith",
-  //         last_name: "Harb",
-  //         text: "Very nice place for a date night, the service was fast and friendly. The food was amazing.",
-  //         rating: 4,
-  //         restaurant_id: stelvioId,
-  //         user_id: userLaith.id,
-  //       },
-  //       {
-  //         first_name: "Laith",
-  //         last_name: "Harb",
-  //         text: "Extremely disappointing in our experience.",
-  //         rating: 2,
-  //         restaurant_id: laBartolaId,
-  //         user_id: userLaith.id,
-  //       },
-  //       {
-  //         first_name: "Laith",
-  //         last_name: "Harb",
-  //         text: "This place is amazing, it has some of the best dishes in the world. It is so so so good!!!",
-  //         rating: 5,
-  //         restaurant_id: elCatrinId,
-  //         user_id: userLaith.id,
-  //       },
-  //       {
-  //         first_name: "Laith",
-  //         last_name: "Harb",
-  //         text: "As always, food was excellent. Waitress was friendly and prompt. We had just one problem in that our dessert order went rogue in the system and we waited ages for it to arrive.",
-  //         rating: 5,
-  //         restaurant_id: kamasutraIndianId,
-  //         user_id: userLaith.id,
-  //       },
-  //       {
-  //         first_name: "Laith",
-  //         last_name: "Harb",
-  //         text: "Restaurant was loud and crowded. Food is not worth the price.",
-  //         rating: 3,
-  //         restaurant_id: eldoradoTacoId,
-  //         user_id: userLaith.id,
-  //       },
-  //       {
-  //         first_name: "Josh",
-  //         last_name: "Allen",
-  //         text: "A Christmas lunch with clients served by a friendly server with a good wine selection everyone enjoyed the appetizers and meals",
-  //         rating: 4,
-  //         restaurant_id: vivaanId,
-  //         user_id: userJosh.id,
-  //       },
-  //       {
-  //         first_name: "Josh",
-  //         last_name: "Allen",
-  //         text: "The food was very tasty, the price is a little high so a place to go only for special occasions",
-  //         rating: 5,
-  //         restaurant_id: sofiaId,
-  //         user_id: userJosh.id,
-  //       },
-  //       {
-  //         first_name: "Josh",
-  //         last_name: "Allen",
-  //         text: "Had a great time at Chops. Our server Dane was super friendly. Dinner was delicious as always.",
-  //         rating: 3,
-  //         restaurant_id: curryishTavernId,
-  //         user_id: userJosh.id,
-  //       },
-  //       {
-  //         first_name: "Josh",
-  //         last_name: "Allen",
-  //         text: "The service was poor as we had to wait a long time for our food. There were some issues but were dealt with in a proper manner.",
-  //         rating: 3,
-  //         restaurant_id: adrakYorkvilleId,
-  //         user_id: userJosh.id,
-  //       },
-  //       {
-  //         first_name: "Josh",
-  //         last_name: "Allen",
-  //         text: "Wonderful food and service.",
-  //         rating: 5,
-  //         restaurant_id: coconutLagoonId,
-  //         user_id: userJosh.id,
-  //       },
-  //       {
-  //         first_name: "Josh",
-  //         last_name: "Allen",
-  //         text: "Great food, great staff. You can’t ask for much more from a restaurant.",
-  //         rating: 5,
-  //         restaurant_id: bluRistoranteId,
-  //         user_id: userJosh.id,
-  //       },
-  //       {
-  //         first_name: "LeBron",
-  //         last_name: "James",
-  //         text: "Wonderful service! Delicious food! Comfortable seating and luxurious atmosphere.",
-  //         rating: 5,
-  //         restaurant_id: RamaKrishnaId,
-  //         user_id: userLebron.id,
-  //       },
-  //       {
-  //         first_name: "LeBron",
-  //         last_name: "James",
-  //         text: "Prime rib and filet were made spot on. Vegetable sides were made well as was the shrimp and scallops.",
-  //         rating: 4,
-  //         restaurant_id: lastTrainToDelhiId,
-  //         user_id: userLebron.id,
-  //       },
-  //       {
-  //         first_name: "LeBron",
-  //         last_name: "James",
-  //         text: "This visit was with a friend who had never been here before. She loved it as much as I do. She said it will be our new go to place!",
-  //         rating: 4,
-  //         restaurant_id: curryishTavernId,
-  //         user_id: userLebron.id,
-  //       },
-  //       {
-  //         first_name: "LeBron",
-  //         last_name: "James",
-  //         text: "Had a full 3 course meal in the mid afternoon and every aspect of it was great. Server was named Brittany I believe and she was simply excellent.",
-  //         rating: 5,
-  //         restaurant_id: pukkaId,
-  //         user_id: userLebron.id,
-  //       },
-  //       {
-  //         first_name: "LeBron",
-  //         last_name: "James",
-  //         text: "Very nice evening spent with special family.",
-  //         rating: 5,
-  //         restaurant_id: mariachisId,
-  //         user_id: userLebron.id,
-  //       },
-  //       {
-  //         first_name: "LeBron",
-  //         last_name: "James",
-  //         text: "First time, and not the last. Very welcoming. The food was deliscious and service very good. Highly recommend.",
-  //         rating: 4,
-  //         restaurant_id: eldoradoTacoId,
-  //         user_id: userLebron.id,
-  //       },
-  //       {
-  //         first_name: "Cassidy",
-  //         last_name: "Mancher",
-  //         text: "Enjoyed our drinks, dinner and dessert. Great service and ambience.",
-  //         rating: 5,
-  //         restaurant_id: mariachisId,
-  //         user_id: userCassidy.id,
-  //       },
-  //       {
-  //         first_name: "Cassidy",
-  //         last_name: "Mancher",
-  //         text: "The food was absolutely on point, we had such a great experience and our server was top notch. ",
-  //         rating: 4,
-  //         restaurant_id: stelvioId,
-  //         user_id: userCassidy.id,
-  //       },
-  //       {
-  //         first_name: "Cassidy",
-  //         last_name: "Mancher",
-  //         text: "The steaks were 'Melt In Your Mouth'!!! Nigel, our waiter was amazing!! Great experience overall!",
-  //         rating: 5,
-  //         restaurant_id: coconutLagoonId,
-  //         user_id: userCassidy.id,
-  //       },
-  //       {
-  //         first_name: "Cassidy",
-  //         last_name: "Mancher",
-  //         text: "It was really great! Just temperature wise it was really chilly. A little mixup at the end with desserts also but overall we really enjoyed the evening",
-  //         rating: 4,
-  //         restaurant_id: bluRistoranteId,
-  //         user_id: userCassidy.id,
-  //       },
-  //       {
-  //         first_name: "Cassidy",
-  //         last_name: "Mancher",
-  //         text: "Food was served cold. Major No No. Fantastic Dessert. Service was good. Heavy Rock music should be toned down. Price vs Quality… not great.",
-  //         rating: 3,
-  //         restaurant_id: laBartolaId,
-  //         user_id: userCassidy.id,
-  //       },
-  //       {
-  //         first_name: "Cassidy",
-  //         last_name: "Mancher",
-  //         text: "Fantastic food and excellent selection. Everything was fresh - and the scones were still warm!",
-  //         rating: 4,
-  //         restaurant_id: eldoradoTacoId,
-  //         user_id: userCassidy.id,
-  //       },
-  //       {
-  //         first_name: "Cassidy",
-  //         last_name: "Mancher",
-  //         text: "Fantastic food and excellent selection. Everything was fresh - and the scones were still warm!",
-  //         rating: 4,
-  //         restaurant_id: utsavId,
-  //         user_id: userCassidy.id,
-  //       },
-  //     ],
-  //   });
+  await prisma.review.createMany({
+    data: [
+      {
+        first_name: "Laith",
+        last_name: "Harb",
+        text: "This place is amazing, it has some of the best dishes in the world. It is so so so good!!!",
+        rating: 5,
+        restaurant_id: vivaanId,
+        user_id: userLaith.id,
+      },
+      {
+        first_name: "Laith",
+        last_name: "Harb",
+        text: "This food is so good! It is the fanciest thing I have ever seen in my short life",
+        rating: 5,
+        restaurant_id: bluRistoranteId,
+        user_id: userLaith.id,
+      },
+      {
+        first_name: "Laith",
+        last_name: "Harb",
+        text: "Excellent food and service. Busy night, but everything was great! Highly recommend.",
+        rating: 5,
+        restaurant_id: elCatrinId,
+        user_id: userLaith.id,
+      },
+      {
+        first_name: "Laith",
+        last_name: "Harb",
+        text: "Very nice place for a date night, the service was fast and friendly. The food was amazing.",
+        rating: 4,
+        restaurant_id: stelvioId,
+        user_id: userLaith.id,
+      },
+      {
+        first_name: "Laith",
+        last_name: "Harb",
+        text: "Extremely disappointing in our experience.",
+        rating: 2,
+        restaurant_id: laBartolaId,
+        user_id: userLaith.id,
+      },
+      {
+        first_name: "Laith",
+        last_name: "Harb",
+        text: "This place is amazing, it has some of the best dishes in the world. It is so so so good!!!",
+        rating: 5,
+        restaurant_id: elCatrinId,
+        user_id: userLaith.id,
+      },
+      {
+        first_name: "Laith",
+        last_name: "Harb",
+        text: "As always, food was excellent. Waitress was friendly and prompt. We had just one problem in that our dessert order went rogue in the system and we waited ages for it to arrive.",
+        rating: 5,
+        restaurant_id: kamasutraIndianId,
+        user_id: userLaith.id,
+      },
+      {
+        first_name: "Laith",
+        last_name: "Harb",
+        text: "Restaurant was loud and crowded. Food is not worth the price.",
+        rating: 3,
+        restaurant_id: eldoradoTacoId,
+        user_id: userLaith.id,
+      },
+      {
+        first_name: "Josh",
+        last_name: "Allen",
+        text: "A Christmas lunch with clients served by a friendly server with a good wine selection everyone enjoyed the appetizers and meals",
+        rating: 4,
+        restaurant_id: vivaanId,
+        user_id: userJosh.id,
+      },
+      {
+        first_name: "Josh",
+        last_name: "Allen",
+        text: "The food was very tasty, the price is a little high so a place to go only for special occasions",
+        rating: 5,
+        restaurant_id: sofiaId,
+        user_id: userJosh.id,
+      },
+      {
+        first_name: "Josh",
+        last_name: "Allen",
+        text: "Had a great time at Chops. Our server Dane was super friendly. Dinner was delicious as always.",
+        rating: 3,
+        restaurant_id: curryishTavernId,
+        user_id: userJosh.id,
+      },
+      {
+        first_name: "Josh",
+        last_name: "Allen",
+        text: "The service was poor as we had to wait a long time for our food. There were some issues but were dealt with in a proper manner.",
+        rating: 3,
+        restaurant_id: adrakYorkvilleId,
+        user_id: userJosh.id,
+      },
+      {
+        first_name: "Josh",
+        last_name: "Allen",
+        text: "Wonderful food and service.",
+        rating: 5,
+        restaurant_id: coconutLagoonId,
+        user_id: userJosh.id,
+      },
+      {
+        first_name: "Josh",
+        last_name: "Allen",
+        text: "Great food, great staff. You can’t ask for much more from a restaurant.",
+        rating: 5,
+        restaurant_id: bluRistoranteId,
+        user_id: userJosh.id,
+      },
+      {
+        first_name: "LeBron",
+        last_name: "James",
+        text: "Wonderful service! Delicious food! Comfortable seating and luxurious atmosphere.",
+        rating: 5,
+        restaurant_id: RamaKrishnaId,
+        user_id: userLebron.id,
+      },
+      {
+        first_name: "LeBron",
+        last_name: "James",
+        text: "Prime rib and filet were made spot on. Vegetable sides were made well as was the shrimp and scallops.",
+        rating: 4,
+        restaurant_id: lastTrainToDelhiId,
+        user_id: userLebron.id,
+      },
+      {
+        first_name: "LeBron",
+        last_name: "James",
+        text: "This visit was with a friend who had never been here before. She loved it as much as I do. She said it will be our new go to place!",
+        rating: 4,
+        restaurant_id: curryishTavernId,
+        user_id: userLebron.id,
+      },
+      {
+        first_name: "LeBron",
+        last_name: "James",
+        text: "Had a full 3 course meal in the mid afternoon and every aspect of it was great. Server was named Brittany I believe and she was simply excellent.",
+        rating: 5,
+        restaurant_id: pukkaId,
+        user_id: userLebron.id,
+      },
+      {
+        first_name: "LeBron",
+        last_name: "James",
+        text: "Very nice evening spent with special family.",
+        rating: 5,
+        restaurant_id: mariachisId,
+        user_id: userLebron.id,
+      },
+      {
+        first_name: "LeBron",
+        last_name: "James",
+        text: "First time, and not the last. Very welcoming. The food was deliscious and service very good. Highly recommend.",
+        rating: 4,
+        restaurant_id: eldoradoTacoId,
+        user_id: userLebron.id,
+      },
+      {
+        first_name: "Cassidy",
+        last_name: "Mancher",
+        text: "Enjoyed our drinks, dinner and dessert. Great service and ambience.",
+        rating: 5,
+        restaurant_id: mariachisId,
+        user_id: userCassidy.id,
+      },
+      {
+        first_name: "Cassidy",
+        last_name: "Mancher",
+        text: "The food was absolutely on point, we had such a great experience and our server was top notch. ",
+        rating: 4,
+        restaurant_id: stelvioId,
+        user_id: userCassidy.id,
+      },
+      {
+        first_name: "Cassidy",
+        last_name: "Mancher",
+        text: "The steaks were 'Melt In Your Mouth'!!! Nigel, our waiter was amazing!! Great experience overall!",
+        rating: 5,
+        restaurant_id: coconutLagoonId,
+        user_id: userCassidy.id,
+      },
+      {
+        first_name: "Cassidy",
+        last_name: "Mancher",
+        text: "It was really great! Just temperature wise it was really chilly. A little mixup at the end with desserts also but overall we really enjoyed the evening",
+        rating: 4,
+        restaurant_id: bluRistoranteId,
+        user_id: userCassidy.id,
+      },
+      {
+        first_name: "Cassidy",
+        last_name: "Mancher",
+        text: "Food was served cold. Major No No. Fantastic Dessert. Service was good. Heavy Rock music should be toned down. Price vs Quality… not great.",
+        rating: 3,
+        restaurant_id: laBartolaId,
+        user_id: userCassidy.id,
+      },
+      {
+        first_name: "Cassidy",
+        last_name: "Mancher",
+        text: "Fantastic food and excellent selection. Everything was fresh - and the scones were still warm!",
+        rating: 4,
+        restaurant_id: eldoradoTacoId,
+        user_id: userCassidy.id,
+      },
+      {
+        first_name: "Cassidy",
+        last_name: "Mancher",
+        text: "Fantastic food and excellent selection. Everything was fresh - and the scones were still warm!",
+        rating: 4,
+        restaurant_id: utsavId,
+        user_id: userCassidy.id,
+      },
+    ],
+  });
 
-  //   await prisma.table.createMany({
-  //     data: [
-  //       {
-  //         restaurant_id: vivaanId,
-  //         seats: 4,
-  //       },
-  //       {
-  //         restaurant_id: vivaanId,
-  //         seats: 4,
-  //       },
-  //       {
-  //         restaurant_id: vivaanId,
-  //         seats: 2,
-  //       },
-  //     ],
-  //   });
+  await prisma.table.createMany({
+    data: [
+      {
+        restaurant_id: vivaanId,
+        seats: 4,
+      },
+      {
+        restaurant_id: vivaanId,
+        seats: 4,
+      },
+      {
+        restaurant_id: vivaanId,
+        seats: 2,
+      },
+    ],
+  });
 
   return new Response("Hello");
 }
