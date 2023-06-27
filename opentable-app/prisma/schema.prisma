@@ -79,7 +79,7 @@ model User {
   city       String
   password   String
   email      String
-  phone      Int
+  phone      String
   reviews    Review[]
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
