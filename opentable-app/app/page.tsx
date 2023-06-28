@@ -1,5 +1,5 @@
 import React from "react";
-import { PRICE, Location, Cuisine } from "@prisma/client";
+import { PRICE, Location, Cuisine, Review } from "@prisma/client";
 import { Cards, Header } from "./components";
 import { PrismaClient } from "@prisma/client";
 
@@ -10,6 +10,8 @@ export interface RestaurantCardProps {
   location: Location;
   cuisine: Cuisine;
   main_image: string;
+  slug: string;
+  reviews: Review[];
 }
 
 const prisma = new PrismaClient();
@@ -22,6 +24,8 @@ const fetchRestaurants = async (): Promise<RestaurantCardProps[]> => {
       cuisine: true,
       price: true,
       location: true,
+      slug: true,
+      reviews: true,
     },
   });
 

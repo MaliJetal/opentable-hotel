@@ -1,12 +1,20 @@
 import Price from "../../components/Price";
 import Link from "next/link";
 import { RestaurantCardProps } from "../../page";
+import { calReviewRatingAvg } from "../../../utils/calReviewRatingAvg";
 
 export default function RestaurantCard({
   restaurant,
 }: {
   restaurant: RestaurantCardProps;
 }) {
+  const renderRatingText = () => {
+    const ratings = calReviewRatingAvg(restaurant.reviews);
+    if (ratings > 4) return "Awesome";
+    else if (ratings <= 4 && ratings > 3) return "Good";
+    else if (ratings <= 3 && ratings > 2) return "Average";
+    else return 0;
+  };
   return (
     <div className='border-b flex pb-5 ml-4'>
       <img src={restaurant.main_image} alt='' className='w-44 h-36 rounded' />
@@ -14,7 +22,7 @@ export default function RestaurantCard({
         <h2 className='text-3xl'>{restaurant.name}</h2>
         <div className='flex items-start'>
           <div className='flex mb-2'>*****</div>
-          <p className='ml-2 text-sm'>Awesome</p>
+          <p className='ml-2 text-sm'>{renderRatingText()}</p>
         </div>
         <div className='mb-9'>
           <div className='font-light flex text-reg'>

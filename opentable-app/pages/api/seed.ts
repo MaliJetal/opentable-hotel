@@ -1040,7 +1040,7 @@ export default async function handler(
     ],
   });
 
-  const userLaith = await prisma.user.create({
+  const userLaith = await prisma.user?.create({
     data: {
       first_name: "Laith",
       last_name: "Harb",
@@ -1051,7 +1051,7 @@ export default async function handler(
     },
   });
 
-  const userJosh = await prisma.user.create({
+  const userJosh = await prisma.user?.create({
     data: {
       first_name: "Josh",
       last_name: "Allen",
@@ -1062,7 +1062,7 @@ export default async function handler(
     },
   });
 
-  const userLebron = await prisma.user.create({
+  const userLebron = await prisma.user?.create({
     data: {
       first_name: "LeBron",
       last_name: "James",
@@ -1073,7 +1073,7 @@ export default async function handler(
     },
   });
 
-  const userCassidy = await prisma.user.create({
+  const userCassidy = await prisma.user?.create({
     data: {
       first_name: "Cassidy",
       last_name: "Marksom",
@@ -1305,22 +1305,23 @@ export default async function handler(
     ],
   });
 
-  await prisma.table.createMany({
-    data: [
-      {
-        restaurant_id: vivaanId,
-        seats: 4,
-      },
-      {
-        restaurant_id: vivaanId,
-        seats: 4,
-      },
-      {
-        restaurant_id: vivaanId,
-        seats: 2,
-      },
-    ],
-  });
+  // await prisma.table.createMany({
+  //   data: [
+  //     {
+  //       restaurant_id: vivaanId,
+  //       seats: 4,
+  //     },
+  //     {
+  //       restaurant_id: vivaanId,
+  //       seats: 4,
+  //     },
+  //     {
+  //       restaurant_id: vivaanId,
+  //       seats: 2,
+  //     },
+  //   ],
+  // });
 
-  return new Response("Hello");
+  // return new Response("Hello");
+  res.status(200).json({ name: "John Doe" });
 }
