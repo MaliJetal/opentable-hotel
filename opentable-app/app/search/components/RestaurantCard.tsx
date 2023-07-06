@@ -2,6 +2,7 @@ import Price from "../../components/Price";
 import Link from "next/link";
 import { RestaurantCardProps } from "../../page";
 import { calReviewRatingAvg } from "../../../utils/calReviewRatingAvg";
+import Stars from "../../components/Stars";
 
 export default function RestaurantCard({
   restaurant,
@@ -21,7 +22,9 @@ export default function RestaurantCard({
       <div className='pl-5'>
         <h2 className='text-3xl'>{restaurant.name}</h2>
         <div className='flex items-start'>
-          <div className='flex mb-2'>*****</div>
+          <div className='flex mb-2'>
+            <Stars reviews={restaurant.reviews} />
+          </div>
           <p className='ml-2 text-sm'>{renderRatingText()}</p>
         </div>
         <div className='mb-9'>
@@ -32,7 +35,7 @@ export default function RestaurantCard({
           </div>
         </div>
         <div className='text-red-600'>
-          <Link href={`restaurant/{restaurant.slug`}>
+          <Link href={`restaurant/${restaurant.slug}`}>
             View more information
           </Link>
         </div>
