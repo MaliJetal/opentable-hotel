@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./reserve/[slug]/components/Header";
+import Header from "./components/Header";
 
 export default function loading() {
   return (
@@ -9,7 +9,7 @@ export default function loading() {
         {[1, 2, 3, 4, 5, 6, 7, 8, , 9, 10, 11, 12].map((num) => (
           <div
             key={num}
-            className='animate-pulse bg-slate-200 w-64 h-72 rounded overflow-hidden border cursor-pointer'
+            className='animate-pulse bg-slate-200 w-64 m-3 h-72 rounded overflow-hidden border cursor-pointer'
           ></div>
         ))}
       </div>
