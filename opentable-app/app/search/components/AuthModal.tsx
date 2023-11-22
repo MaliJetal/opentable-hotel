@@ -30,10 +30,10 @@ export default function LoginModal({ isSignIn }: { isSignIn: boolean }) {
     city: "",
     password: "",
   });
-
   function renderContent(signInContent: string, signUpContent: string) {
     return isSignIn ? signInContent : signUpContent;
   }
+
   return (
     <div>
       <Button
